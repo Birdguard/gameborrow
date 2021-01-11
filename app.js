@@ -107,7 +107,11 @@ var mongoose = require('mongoose');
 
 // const passportLocalMongoose = require('passport-local-mongoose');
 
-var mongoDB = 'mongodb+srv://birdguard:Karan123@cluster0.ckgdu.mongodb.net/local_library?retryWrites=true&w=majority'
+var dev_db_url = "mongodb+srv://birdguard:Karan123@cluster0.ckgdu.mongodb.net/local_library?retryWrites=true&w=majority"
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
+
+// var mongoDB = 'mongodb+srv://birdguard:Karan123@cluster0.ckgdu.mongodb.net/local_library?retryWrites=true&w=majority'
+
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
