@@ -17,3 +17,8 @@ block content
 
   if gameinstance.status!='Available'
     p #[strong Due back:] #{gameinstance.due_back}
+  hr
+  p
+    a(href=gameinstance.url+'/delete') Delete GameInstance
+  p
+    a(href=gameinstance.url+'/update') Update GameInstance

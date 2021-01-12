@@ -11,9 +11,9 @@ var DeveloperSchema = new Schema(
 );
 
 DeveloperSchema
-.virtual('lifespan')
+.virtual('url')
 .get(function () {
-    return '/catalog/developer' + this._id;
+    return '/catalog/developer/' + this._id;
 });
 
 //Export this model
